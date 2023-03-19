@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things Scrabble</title>
+   
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+</head>
+<body>
+    <svg
+  version="1.1"
+  id="Layer_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  x="0px"
+  y="0px"
+  viewBox="0 0 960 560"
+  style="enable-background:new 0 0 1920 1120;"
+  xml:space="preserve"
+  color-interpolation-filters="sRGB"
+>
+<!-- Stranger Things logo filter by Michael Mullany
+https://codepen.io/mullany/pen/kkYNNQ -->
+<defs>
+  <filter id="strangify">
+    <feTurbulence type="fractalNoise" baseFrequency=".013" numOctaves="1" seed="46" id="turbulence"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.1 0"/>
+    <feComposite operator="in" in="SourceGraphic" result="intermediate-1"/>
+    <feComponentTransfer>
+      <feFuncA type="table" tableValues="0 0 0 0 1 1 1"/>
+    </feComponentTransfer>
+     <feGaussianBlur stdDeviation="4"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="1.5">
+      </feFuncA>
+    </feComponentTransfer>
+    <feComposite operator="over" in2="intermediate-1"/>
+  </filter>
+</defs>
+</svg>
+    <script src="main.js"></script>
+</body>
+</html>
